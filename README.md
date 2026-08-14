@@ -15,13 +15,6 @@ The application exposes these capabilities through a browser interface where use
 
 ## Screenshots
 
-### History Text
-
-The browser accepts a word and year range and returns the corresponding historical query information.
-
-
-<img width="721" height="730" alt="historytext" src="https://github.com/user-attachments/assets/253ac2ff-6a45-4299-bfd6-ebb6c625efba" />
-
 ### Hyponyms
 
 A basic hyponym query returns the WordNet-related terms associated with a word.
@@ -101,7 +94,7 @@ The implementation extends the supplied browser interface with data-processing a
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Following the technical spec given in 61b
+# Following the 61B Technical Specification
 
 ## Features
 
