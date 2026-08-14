@@ -13,6 +13,96 @@ Ngordnet provides an interactive interface for querying two complementary datase
 
 The application exposes these capabilities through a browser interface where users can enter words, year ranges, and ranking parameters.
 
+## Screenshots
+
+### History Text
+
+The browser accepts a word and year range and returns the corresponding historical query information.
+
+
+<img width="721" height="730" alt="historytext" src="https://github.com/user-attachments/assets/253ac2ff-6a45-4299-bfd6-ebb6c625efba" />
+
+### Hyponyms
+
+A basic hyponym query returns the WordNet-related terms associated with a word.
+
+<img width="731" height="726" alt="hyponymskblank" src="https://github.com/user-attachments/assets/ab5ebbcd-9bd4-4d6c-8000-94af697a3aac" />
+
+### Ranked Hyponyms
+
+With `k = 5`, the application combines WordNet relationships with historical NGram frequency.
+
+<img width="722" height="729" alt="hyponyms5" src="https://github.com/user-attachments/assets/18751905-c672-4e94-adea-3efacae56f2b" />
+
+
+### Common Ancestors
+
+The application can also expose graph relationships through common-ancestor queries.
+
+<img width="722" height="728" alt="commonancestorskblank" src="https://github.com/user-attachments/assets/d0ee350f-8a51-40f4-9af2-a775c3e32a9b" />
+
+### Ranked Common Ancestors
+
+The interface supports the `k` parameter for graph-based ranked queries as well.
+
+<img width="722" height="728" alt="commonancestorsk5" src="https://github.com/user-attachments/assets/a648cdda-5314-4170-84de-f18d9aa095f1"/>
+
+## Measurable Result
+
+The completed application demonstrates:
+
+* Historical queries across a **21-year range** (`2000–2020`)
+* WordNet hyponym traversal
+* `k = 5` ranked queries
+* Browser-based interaction through a local Java web server
+* Integration of **two independent datasets**: NGram and WordNet
+* In-memory data structures designed to avoid reparsing the datasets for every query
+
+
+| Metric                                 | Result          |
+| ----------------------------           | --------        |
+| NGram and WordNet datasets load time   | `49393.9939 ms` | 
+| Average hyponym query                  | `13.5321 ms`    |
+| Average common ancestor query          | `50.56724 ms`   |
+| Average hyponym query (`k=5`)          | `20.7950 ms`    |
+| Average common ancestor query (`k=5`)  | `138.75708 ms`  |
+
+## What I Learned
+
+This project strengthened my understanding of:
+
+* Directed graphs and graph traversal
+* Hash-based and tree-based data structures
+* Time-series data modeling
+* Parsing large structured datasets
+* Algorithmic complexity and performance
+* Separation of data, logic, and HTTP request handling
+* Designing helper classes instead of placing all logic in request handlers
+* Integrating multiple datasets into a single application
+
+## Tech Stack
+
+* **Java**
+* **JUnit**
+* **HTML / JavaScript**
+* **Jetty-based local web server**
+* **Google NGram dataset**
+* **WordNet dataset**
+* **Git**
+
+## Project Context
+
+This project is based on UC Berkeley CS 61B's Ngordnet assignments:
+
+* Project 2A — NGrams
+* Project 2B — WordNet
+
+The implementation extends the supplied browser interface with data-processing and graph functionality.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Following the technical spec given in 61b
+
 ## Features
 
 ### Historical word analysis
@@ -190,100 +280,3 @@ Alphabetically sorted result
 ```
 
 This combines two different data-processing problems: semantic graph traversal and historical frequency analysis.
-
-## Screenshots
-
-### History Text
-
-The browser accepts a word and year range and returns the corresponding historical query information.
-
-
-<img width="721" height="730" alt="historytext" src="https://github.com/user-attachments/assets/253ac2ff-6a45-4299-bfd6-ebb6c625efba" />
-
-### Hyponyms
-
-A basic hyponym query returns the WordNet-related terms associated with a word.
-
-<img width="731" height="726" alt="hyponymskblank" src="https://github.com/user-attachments/assets/ab5ebbcd-9bd4-4d6c-8000-94af697a3aac" />
-
-### Ranked Hyponyms
-
-With `k = 5`, the application combines WordNet relationships with historical NGram frequency.
-
-<img width="722" height="729" alt="hyponyms5" src="https://github.com/user-attachments/assets/18751905-c672-4e94-adea-3efacae56f2b" />
-
-
-### Common Ancestors
-
-The application can also expose graph relationships through common-ancestor queries.
-
-<img width="722" height="728" alt="commonancestorskblank" src="https://github.com/user-attachments/assets/d0ee350f-8a51-40f4-9af2-a775c3e32a9b" />
-
-### Ranked Common Ancestors
-
-The interface supports the `k` parameter for graph-based ranked queries as well.
-
-<img width="722" height="728" alt="commonancestorsk5" src="https://github.com/user-attachments/assets/a648cdda-5314-4170-84de-f18d9aa095f1"/>
-
-## Example Query
-
-```text
-words: sun
-start: 2000
-end: 2020
-k: 5
-```
-
-The application processes the request through the browser handler, WordNet graph, and NGram data layer before returning the final result.
-
-## Measurable Result
-
-The completed application demonstrates:
-
-* Historical queries across a **21-year range** (`2000–2020`)
-* WordNet hyponym traversal
-* `k = 5` ranked queries
-* Browser-based interaction through a local Java web server
-* Integration of **two independent datasets**: NGram and WordNet
-* In-memory data structures designed to avoid reparsing the datasets for every query
-
-
-| Metric                                 | Result          |
-| ----------------------------           | --------        |
-| NGram and WordNet datasets load time   | `49393.9939 ms` | 
-| Average hyponym query                  | `13.5321 ms`    |
-| Average common ancestor query          | `50.56724 ms`   |
-| Average hyponym query (`k=5`)          | `20.7950 ms`    |
-| Average common ancestor query (`k=5`)  | `138.75708 ms`  |
-
-## What I Learned
-
-This project strengthened my understanding of:
-
-* Directed graphs and graph traversal
-* Hash-based and tree-based data structures
-* Time-series data modeling
-* Parsing large structured datasets
-* Algorithmic complexity and performance
-* Separation of data, logic, and HTTP request handling
-* Designing helper classes instead of placing all logic in request handlers
-* Integrating multiple datasets into a single application
-
-## Tech Stack
-
-* **Java**
-* **JUnit**
-* **HTML / JavaScript**
-* **Jetty-based local web server**
-* **Google NGram dataset**
-* **WordNet dataset**
-* **Git**
-
-## Project Context
-
-This project is based on UC Berkeley CS 61B's Ngordnet assignments:
-
-* Project 2A — NGrams
-* Project 2B — WordNet
-
-The implementation extends the supplied browser interface with data-processing and graph functionality.
