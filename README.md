@@ -1,5 +1,7 @@
 # Ngordnet — NGram & WordNet Explorer
 
+*Note: Source code is kept in a private repository in accordance with UC Berkeley Course Policy.*
+
 A Java-based web application for exploring how English words change over time and how words are related through the WordNet semantic hierarchy.
 
 Built as part of **UC Berkeley CS 61B Project 2A/2B**, this project combines historical language data, time-series analysis, directed graphs, and browser-based query handling.
