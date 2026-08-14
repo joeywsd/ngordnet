@@ -197,35 +197,33 @@ This combines two different data-processing problems: semantic graph traversal a
 
 The browser accepts a word and year range and returns the corresponding historical query information.
 
-![History Text](<img width="721" height="730" alt="historytext" src="https://github.com/user-attachments/assets/3e701800-b53a-44e4-8203-6fd5a6780518" />
-)
+
+<img width="721" height="730" alt="historytext" src="https://github.com/user-attachments/assets/253ac2ff-6a45-4299-bfd6-ebb6c625efba" />
 
 ### Hyponyms
 
 A basic hyponym query returns the WordNet-related terms associated with a word.
 
-![Hyponyms](<img width="731" height="726" alt="hyponymskblank" src="https://github.com/user-attachments/assets/ab5ebbcd-9bd4-4d6c-8000-94af697a3aac" />
-)
+<img width="731" height="726" alt="hyponymskblank" src="https://github.com/user-attachments/assets/ab5ebbcd-9bd4-4d6c-8000-94af697a3aac" />
 
 ### Ranked Hyponyms
 
 With `k = 5`, the application combines WordNet relationships with historical NGram frequency.
 
-![Ranked Hyponyms](<img width="722" height="729" alt="hyponyms5" src="https://github.com/user-attachments/assets/18751905-c672-4e94-adea-3efacae56f2b" />
-)
+<img width="722" height="729" alt="hyponyms5" src="https://github.com/user-attachments/assets/18751905-c672-4e94-adea-3efacae56f2b" />
+
 
 ### Common Ancestors
 
 The application can also expose graph relationships through common-ancestor queries.
 
-![Common Ancestors](<img width="722" height="728" alt="commonancestorskblank" src="https://github.com/user-attachments/assets/d0ee350f-8a51-40f4-9af2-a775c3e32a9b" />
-)
+<img width="722" height="728" alt="commonancestorskblank" src="https://github.com/user-attachments/assets/d0ee350f-8a51-40f4-9af2-a775c3e32a9b" />
 
 ### Ranked Common Ancestors
 
 The interface supports the `k` parameter for graph-based ranked queries as well.
 
-![Ranked Common Ancestors](<img width="722" height="728" alt="commonancestorsk5" src="https://github.com/user-attachments/assets/a648cdda-5314-4170-84de-f18d9aa095f1"/>)
+<img width="722" height="728" alt="commonancestorsk5" src="https://github.com/user-attachments/assets/a648cdda-5314-4170-84de-f18d9aa095f1"/>
 
 ## Example Query
 
